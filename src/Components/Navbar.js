@@ -15,9 +15,12 @@ function Navbar() {
        return  item.title.toLowerCase().includes(search)
    })
       setFusers(finalusers)
-  },[search,users])
+  },[search,users,setFusers])
+
+  // setFusers useEffect dependency array la ethuku inga poten nu not sure and it serves no use tho.
+ //  code works well already, terminal showed warning so add it thats it.
+
   
-   
   return (
     <div className='nav'>
     <div className='nav__title'>

@@ -13,8 +13,9 @@ function Editpost() {
    let navigate = useNavigate();
 
      let data = useParams()
-    let {id} = data; 
-    
+    let {id:i} = data; 
+
+    let id = Number(i)
 
     let{users,setUsers} = useContext(dataContext)
     let[editUser,setEdituser] = useState({title:"",post:""})
@@ -24,11 +25,13 @@ function Editpost() {
 
     useEffect(()=>{
        let user = users.filter((item)=>{
-        return item.id==id;
+        return item.id===id;
        })
        setEdituser({...user[0]})
-    },[])
+    },[id,users])
 
+    // id and users useEffect dependency array la ethuku inga poten nu not sure and it serves no use tho.
+    //  code works well already, terminal showed warning so add it thats it.
 
     function handleChange(e){
        let value= e.target.value;

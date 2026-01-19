@@ -9,15 +9,17 @@ function Postid() {
   let navigate = useNavigate()
 
   let {users ,setUsers} = useContext(dataContext)
-    let {id} = useParams();
+    let {id:i} = useParams();
+    let id = Number(i)
+    
 
     let editUser = users.filter((user)=>{
-      return user.id==id
+      return user.id===id
     })
 
     function handleDelete(id){
        let deleteuser = users.filter((user)=>{
-        return user.id!=id
+        return user.id!==id
        })
        setUsers(deleteuser)
        navigate("/")

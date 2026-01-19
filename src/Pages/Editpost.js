@@ -14,7 +14,6 @@ function Editpost() {
 
      let data = useParams()
     let {id:i} = data; 
-
     let id = Number(i)
 
     let{users,setUsers} = useContext(dataContext)
